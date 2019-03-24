@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'seanreid';
+  title = 'sean reid';
+  opened: boolean;
+  showMenu: boolean = true;
+
+  menuButton = () => {
+    this.showMenu = !this.showMenu;
+  }
 }
