@@ -11,6 +11,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { SidenavComponent } from "@app/sidenav/sidenav.component";
 
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { PublicModule } from "@app/pubilc/public.module";
 
 @NgModule({
   declarations: [AppComponent, SidenavComponent],
@@ -20,7 +21,8 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
     BrowserAnimationsModule,
     FlexLayoutModule,
     MaterialModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    PublicModule
   ],
   providers: [],
   bootstrap: [AppComponent]
