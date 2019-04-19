@@ -2,28 +2,7 @@
 
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav [(opened)]="opened" mode="side">
-    <p>
-      <button
-        class="right-align fill-width"
-        mat-button
-        (click)="sidenav.toggle(); menuButton()"
-      >
-        <i class="material-icons">
-          arrow_back_ios
-        </i>
-      </button>
-    </p>
-    <mat-list>
-      <mat-list-item> Summary </mat-list-item>
-      <mat-list-item> Experience </mat-list-item>
-      <mat-list-item> Employment </mat-list-item>
-      <mat-list-item> Experiments </mat-list-item>
-      <mat-list-item> Interests </mat-list-item>
-    </mat-list>
-    <div fxLayout="row" fxLayoutAlign="space-evenly end" class="mat-display-1">
-      <fa-icon [icon]="faGithub"></fa-icon>
-      <fa-icon [icon]="faLinkedinIn"></fa-icon>
-    </div>
+    <app-sidenav (close)="sidenav.toggle(); menuButton()"></app-sidenav>
   </mat-sidenav>
 
   <mat-sidenav-content>

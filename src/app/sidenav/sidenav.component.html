@@ -1,3 +1,18 @@
 <p>
-  sidenav works!
+  <button class="right-align fill-width" mat-button (click)="close.emit('hi')">
+    <i class="material-icons">
+      arrow_back_ios
+    </i>
+  </button>
 </p>
+<mat-list>
+  <mat-list-item> Summary </mat-list-item>
+  <mat-list-item> Experience </mat-list-item>
+  <mat-list-item> Employment </mat-list-item>
+  <mat-list-item> Experiments </mat-list-item>
+  <mat-list-item> Interests </mat-list-item>
+</mat-list>
+<div fxLayout="row" fxLayoutAlign="space-evenly end" class="mat-display-1">
+  <fa-icon [icon]="faGithub"></fa-icon>
+  <fa-icon [icon]="faLinkedinIn"></fa-icon>
+</div>

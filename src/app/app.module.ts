@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./material/material.module";
 
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { SidenavComponent } from "./sidenav/sidenav.component";
+import { SidenavComponent } from "@app/sidenav/sidenav.component";
 
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
