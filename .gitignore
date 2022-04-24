@@ -8,7 +8,7 @@
 /bazel-out
 
 #Angualr
-.angular/
+/.angular
 
 # dependencies
 /node_modules
