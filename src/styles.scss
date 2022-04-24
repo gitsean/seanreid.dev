@@ -1,26 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@use '~@angular/material' as mat;
 
 // @import "@angular/material/prebuilt-themes/indigo-pink.css";
 // @import "./custom-theme";
 
-@import "~@angular/material/theming";
 
-$custom-typography: mat-typography-config(
+$custom-typography: mat.define-typography-config(
   $font-family: "Roboto, monospace",
-  $headline: mat-typography-level(32px, 48px, 700),
-  $body-1: mat-typography-level(16px, 24px, 500)
+  $headline: mat.define-typography-level(32px, 48px, 700),
+  $body-1: mat.define-typography-level(16px, 24px, 500)
 );
 
-@include mat-base-typography($custom-typography);
+@include mat.typography-hierarchy($custom-typography);
 
 // Override typography for a specific Angular Material components.
-@include mat-checkbox-typography($custom-typography);
+@include mat.checkbox-typography($custom-typography);
 
 // Override typography for all Angular Material, including mat-base-typography and all components.
-@include angular-material-typography($custom-typography);
+@include mat.all-component-typographies($custom-typography);
 
 // always include only once per project
-@include mat-core($custom-typography);
+@include mat.core($custom-typography);
 
 // import our custom theme
 @import "custom-theme.scss";
@@ -28,5 +28,5 @@ $custom-typography: mat-typography-config(
 // specify theme class eg: <body class="my-theme"> ... </body>
 .custom-theme {
   // use our theme with angular-material-theme mixin
-  @include angular-material-theme($custom-theme);
+  @include mat.all-component-themes($custom-theme);
 }
