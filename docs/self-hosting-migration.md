@@ -159,7 +159,12 @@ nothing new to expose.
 
 ## Phase 7 — Hardening checklist
 
-- `ufw`: allow 80/443, restrict 22 to the LAN/DMZ subnet only.
+- `ufw`: allow 80/443, and restrict 22 to the **LAN** subnet (e.g.
+  `sudo ufw allow from 192.168.1.0/24 to any port 22 proto tcp`). SSH from
+  home devices arrives with their LAN address, because pfSense routes
+  between LAN and DMZ without NAT, so a DMZ-only rule locks you out. Add
+  the allow rules **before** `sudo ufw enable`. ufw's default is to drop
+  incoming traffic, so a missing rule shows up as a hang, not an error.
 - `fail2ban` for nginx and sshd.
 - `unattended-upgrades` for OS patches.
 - SSH: key-only auth, disable password auth (`PasswordAuthentication no`).
