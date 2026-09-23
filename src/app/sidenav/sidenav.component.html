@@ -7,38 +7,36 @@
 </p>
 <mat-list>
   <mat-list-item>
-    <button mat-button routerLink="/summary" routerLinkActive="active">
+    <button mat-button routerLink="/summary" routerLinkActive="active" (click)="close.emit()">
       Summary
     </button>
   </mat-list-item>
   <mat-list-item>
-    <button mat-button routerLink="/experience" routerLinkActive="active">
+    <button mat-button routerLink="/experience" routerLinkActive="active" (click)="close.emit()">
       Experience
     </button>
   </mat-list-item>
   <mat-list-item>
-    <button mat-button routerLink="/employment" routerLinkActive="active">
+    <button mat-button routerLink="/employment" routerLinkActive="active" (click)="close.emit()">
       Employment
     </button>
   </mat-list-item>
   <mat-list-item>
-    <button mat-button routerLink="/experiments" routerLinkActive="active">
+    <button mat-button routerLink="/experiments" routerLinkActive="active" (click)="close.emit()">
       Experiments
     </button>
   </mat-list-item>
   <mat-list-item>
-    <button mat-button routerLink="/interests" routerLinkActive="active">
+    <button mat-button routerLink="/interests" routerLinkActive="active" (click)="close.emit()">
       Interests
     </button>
   </mat-list-item>
 </mat-list>
-<div
-  fxLayout="row"
-  fxLayoutAlign="space-evenly end"
-  class="mat-display-1 pad-top"
->
-  <a href="https://github.com/gitsean"><fa-icon [icon]="faGithub"></fa-icon></a>
-  <a href="https://www.linkedin.com/in/sareid"
-    ><fa-icon [icon]="faLinkedinIn"></fa-icon
-  ></a>
+<div fxLayout="row" fxLayoutAlign="space-evenly end" class="mat-display-1 pad-top">
+  <a href="https://github.com/gitsean">
+    <fa-icon [icon]="faGithub"></fa-icon>
+  </a>
+  <a href="https://www.linkedin.com/in/sareid">
+    <fa-icon [icon]="faLinkedinIn"></fa-icon>
+  </a>
 </div>
