@@ -171,11 +171,14 @@ nothing new to expose.
 
 ## Status
 
-- [ ] Mini computer wired to its own isolated pfSense interface
-- [ ] nginx installed and serving locally on the DMZ IP
-- [ ] Cloudflare Origin Certificate installed, SSL mode set to Full (strict)
-- [ ] Port forwards added, restricted to Cloudflare IP alias
-- [ ] pfSense Dynamic DNS client configured and updating the origin record
-- [ ] Self-hosted GitHub Actions runner registered and running as a service
-- [ ] `.github/workflows/deploy.yml` updated to use the self-hosted runner
-- [ ] `ufw` / `fail2ban` / `unattended-upgrades` configured
+- [x] Mini computer wired to its own isolated pfSense interface
+- [x] nginx installed and serving locally on the DMZ IP
+- [x] Cloudflare Origin Certificate installed, SSL mode set to Full (strict)
+- [x] Port forwards added, restricted to Cloudflare IP alias
+- [x] pfSense Dynamic DNS client configured and updating the origin record
+- [x] Self-hosted GitHub Actions runner registered and running as a service
+- [x] `.github/workflows/deploy.yml` updated to use the self-hosted runner
+- [ ] `ufw` enabled (SSH from LAN only, 443 open)
+- [ ] `fail2ban` sshd jail running
+- [ ] `unattended-upgrades` enabled (security only, 04:00 auto-reboot)
+- [ ] SSH key-only auth (`/etc/ssh/sshd_config.d/10-key-only.conf`)
