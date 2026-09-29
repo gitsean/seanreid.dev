@@ -1,0 +1,17 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav [opened]="opened()" (openedChange)="opened.set($event)" mode="side">
+    <app-sidenav (close)="opened.set(false)" />
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <header class="header">
+      @if (!opened()) {
+        <button mat-icon-button (click)="opened.set(true)" aria-label="Open menu">
+          <mat-icon>arrow_forward_ios</mat-icon>
+        </button>
+      }
+      <p class="title">{{ title }}</p>
+    </header>
+    <router-outlet />
+  </mat-sidenav-content>
+</mat-sidenav-container>

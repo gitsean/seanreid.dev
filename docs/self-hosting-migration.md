@@ -178,7 +178,7 @@ nothing new to expose.
 - [x] pfSense Dynamic DNS client configured and updating the origin record
 - [x] Self-hosted GitHub Actions runner registered and running as a service
 - [x] `.github/workflows/deploy.yml` updated to use the self-hosted runner
-- [ ] `ufw` enabled (SSH from LAN only, 443 open)
-- [ ] `fail2ban` sshd jail running
-- [ ] `unattended-upgrades` enabled (security only, 04:00 auto-reboot)
-- [ ] SSH key-only auth (`/etc/ssh/sshd_config.d/10-key-only.conf`)
+- [x] `ufw` enabled (SSH from LAN only, 443 open)
+- [x] `fail2ban` sshd jail running
+- [x] `unattended-upgrades` enabled (security only, 04:00 auto-reboot)
+- [x ] SSH key-only auth (`/etc/ssh/sshd_config.d/10-key-only.conf`)

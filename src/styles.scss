@@ -1,32 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
+@use './theme-colors' as theme;
 
-// @import "@angular/material/prebuilt-themes/indigo-pink.css";
-// @import "./custom-theme";
+html {
+  color-scheme: light;
+  @include mat.theme(
+    (
+      color: (
+        primary: theme.$primary-palette,
+        tertiary: theme.$tertiary-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
 
+html,
+body {
+  height: 100%;
+}
 
-$custom-typography: mat.define-typography-config(
-  $font-family: "Roboto, monospace",
-  $headline: mat.define-typography-level(32px, 48px, 700),
-  $body-1: mat.define-typography-level(16px, 24px, 500)
-);
-
-@include mat.typography-hierarchy($custom-typography);
-
-// Override typography for a specific Angular Material components.
-@include mat.checkbox-typography($custom-typography);
-
-// Override typography for all Angular Material, including mat-base-typography and all components.
-@include mat.all-component-typographies($custom-typography);
-
-// always include only once per project
-@include mat.core($custom-typography);
-
-// import our custom theme
-@import "custom-theme.scss";
-
-// specify theme class eg: <body class="my-theme"> ... </body>
-.custom-theme {
-  // use our theme with angular-material-theme mixin
-  @include mat.all-component-themes($custom-theme);
+body {
+  margin: 0;
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-large);
 }
