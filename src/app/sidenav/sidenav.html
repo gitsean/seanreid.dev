@@ -1,0 +1,21 @@
+<div class="close">
+  <button mat-icon-button (click)="close.emit()" aria-label="Close menu">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+</div>
+<mat-nav-list>
+  @for (link of links; track link.path) {
+    <a mat-list-item [routerLink]="link.path" routerLinkActive #rla="routerLinkActive"
+       [activated]="rla.isActive" (click)="close.emit()">
+      {{ link.label }}
+    </a>
+  }
+</mat-nav-list>
+<div class="social">
+  <a href="https://github.com/gitsean" aria-label="GitHub">
+    <fa-icon [icon]="faGithub" />
+  </a>
+  <a href="https://www.linkedin.com/in/sareid" aria-label="LinkedIn">
+    <fa-icon [icon]="faLinkedinIn" />
+  </a>
+</div>

@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  min-width: 200px;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  margin: 14px 8px;
+}
+
+.social {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  margin: 14px 8px;
+  font-size: 34px;
+
+  a {
+    color: var(--mat-sys-primary);
+  }
+}

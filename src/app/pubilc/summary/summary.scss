@@ -1,0 +1,11 @@
+h1,
+p {
+  margin: 16px 100px;
+}
+
+@media (max-width: 700px) {
+  h1,
+  p {
+    margin: 16px;
+  }
+}

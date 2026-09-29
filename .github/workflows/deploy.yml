@@ -15,14 +15,14 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build
-        run: npx ng build --configuration production
+        run: npx ng build
 
       - name: Deploy
         run: rsync -a --delete html/ /var/www/seanreid.dev/html/
