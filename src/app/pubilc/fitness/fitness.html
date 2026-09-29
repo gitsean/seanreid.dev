@@ -1,0 +1,35 @@
+<section class="fitness">
+  <h1>Fitness &amp; Volume</h1>
+  <p class="intro">
+    Weekly training hours from Strava, with a six-week rolling average as a rough measure of
+    fitness.
+  </p>
+
+  @if (snapshot.isLoading()) {
+    <mat-spinner diameter="40" />
+  } @else if (snapshot.error()) {
+    <p class="status">Training data isn't available right now.</p>
+  } @else if (snapshot.value(); as data) {
+    @if (data.activities.length === 0) {
+      <p class="status">No activities yet.</p>
+    } @else {
+      <mat-chip-listbox
+        multiple
+        aria-label="Filter by sport"
+        [value]="chipValue()"
+        (change)="onSelectionChange($event.value)"
+      >
+        <mat-chip-option [value]="ALL">All</mat-chip-option>
+        @for (sport of sports(); track sport) {
+          <mat-chip-option [value]="sport">{{ sport }}</mat-chip-option>
+        }
+      </mat-chip-listbox>
+
+      <div class="chart">
+        <canvas #canvas aria-label="Weekly training volume and fitness chart" role="img"></canvas>
+      </div>
+
+      <p class="updated">Updated {{ data.generated_at | date: 'medium' }}</p>
+    }
+  }
+</section>

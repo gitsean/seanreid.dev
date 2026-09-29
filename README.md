@@ -1,27 +1,37 @@
-# Seanreid
+# seanreid.dev
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+Personal site, built with Angular 22 and Angular Material (M3). Deployed to the
+self-hosted mini computer by `.github/workflows/deploy.yml`. See
+`docs/self-hosting-migration.md` for the hosting setup.
 
-## Development server
+Requires Node 24 (`nvm use` picks it up from `.nvmrc`).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Commands
 
-## Code scaffolding
+```bash
+npm start        # dev server at http://localhost:4200
+npm run build    # production build into html/
+npm test         # unit tests (Vitest)
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Fitness page
 
-## Build
+`/fitness` charts weekly training volume from Strava. The page is static: it
+reads `public/fitness.json`, which `scripts/fitness-snapshot.mjs` generates by
+syncing new Strava activities into the sean-fitness Postgres database and
+exporting only sport type, start date and moving time.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+CI runs the snapshot on every deploy and nightly at 09:00 UTC. If it fails, the
+previously deployed snapshot is reused. It needs these repo secrets:
+`DATABASE_URL`, `STRAVA_CLIENT_ID`, `STRAVA_CLIENT_SECRET`.
 
-## Running unit tests
+`DATABASE_URL` must be Supabase's **session pooler** URL
+(`postgresql://postgres.<ref>:<password>@aws-0-us-west-2.pooler.supabase.com:5432/postgres`).
+The direct `db.<ref>.supabase.co` host is IPv6-only and won't resolve on an
+IPv4-only network.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run it locally with:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```bash
+DATABASE_URL='<pooler url>' node --env-file ~/sean-fitness/.env.local scripts/fitness-snapshot.mjs
+```

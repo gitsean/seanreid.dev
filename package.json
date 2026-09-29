@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "fitness:snapshot": "node scripts/fitness-snapshot.mjs"
   },
   "private": true,
   "packageManager": "npm@11.19.0",

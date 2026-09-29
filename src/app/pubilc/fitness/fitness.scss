@@ -1,0 +1,33 @@
+.fitness {
+  margin: 16px 100px;
+}
+
+.intro,
+.status,
+.updated {
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.updated {
+  font: var(--mat-sys-body-small);
+}
+
+mat-chip-listbox {
+  display: block;
+  margin: 16px 0 24px;
+}
+
+.chart {
+  position: relative;
+  height: 500px;
+}
+
+@media (max-width: 700px) {
+  .fitness {
+    margin: 16px;
+  }
+
+  .chart {
+    height: 360px;
+  }
+}

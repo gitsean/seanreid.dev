@@ -21,6 +21,7 @@ export class Sidenav {
     { path: '/employment', label: 'Employment' },
     { path: '/experiments', label: 'Experiments' },
     { path: '/interests', label: 'Interests' },
+    { path: '/fitness', label: 'Fitness' },
   ];
 
   protected readonly faGithub = faGithub;

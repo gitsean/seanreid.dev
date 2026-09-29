@@ -12,6 +12,7 @@ export const routes: Routes = [
   { path: 'experiments', component: Experiments },
   { path: 'interests', component: Interests },
   { path: 'summary', component: Summary },
+  { path: 'fitness', loadComponent: () => import('./pubilc/fitness/fitness').then((m) => m.Fitness) },
 
   { path: '', redirectTo: '/summary', pathMatch: 'full' },
   { path: '**', component: PageNotFound },
