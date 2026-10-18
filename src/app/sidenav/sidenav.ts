@@ -18,7 +18,6 @@ export class Sidenav {
   protected readonly links = [
     { path: '/summary', label: 'Summary' },
     { path: '/experience', label: 'Experience' },
-    { path: '/employment', label: 'Employment' },
     { path: '/experiments', label: 'Experiments' },
     { path: '/interests', label: 'Interests' },
     { path: '/fitness', label: 'Fitness' },

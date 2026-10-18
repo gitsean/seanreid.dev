@@ -1,0 +1,41 @@
+h1,
+h2,
+p,
+ul {
+  margin: 16px 100px;
+}
+
+h2 {
+  margin-top: 32px;
+  margin-bottom: 4px;
+}
+
+.location {
+  font-size: 0.7em;
+  font-weight: normal;
+  opacity: 0.7;
+  margin-left: 8px;
+}
+
+.role {
+  margin-top: 0;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  h1,
+  h2,
+  p,
+  ul {
+    margin: 16px;
+  }
+
+  h2 {
+    margin-top: 32px;
+    margin-bottom: 4px;
+  }
+
+  .role {
+    margin-top: 0;
+  }
+}
