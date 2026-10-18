@@ -1,3 +1,40 @@
-<p>
-  experiments works!
-</p>
+<h1>Experiments</h1>
+
+<section>
+  <h2>Home Server</h2>
+  <p>This site used to run on a cloud server. It now runs on a small computer at my house, and that's been a fun way
+    to learn more about networking and security.</p>
+  <ul>
+    <li>The server sits on its own isolated network segment behind a dedicated firewall. It can reach the internet, but
+      it can't start a connection to anything else on my home network.</li>
+    <li>All traffic comes in through Cloudflare. The firewall only accepts web traffic from Cloudflare's network, so
+      my home IP isn't published and direct scans are dropped.</li>
+    <li>Traffic is encrypted end to end, including the hop between Cloudflare and the server.</li>
+    <li>Deploys run through a GitHub Actions runner on the server itself. It only makes outbound connections, so
+      nothing extra has to be opened to the internet.</li>
+    <li>The server is locked down with a host firewall, automatic security updates, key-only SSH from inside the
+      house, and fail2ban.</li>
+    <li>A nightly job pulls my Strava activity into a database and publishes a summary to the
+      <a routerLink="/fitness">Fitness</a> page.</li>
+  </ul>
+  <p>I've just scratched the surface and I'm looking forward to finding more uses for it.</p>
+</section>
+
+<section>
+  <h2>Beach Cruiser Build</h2>
+  <p>For about a year I'd had an itch to build a beach cruiser. One weekend I found a frame on Facebook Marketplace
+    that was perfect for what I wanted. It was rusted and the components were shot. Only the frame, the handlebars, and
+    a couple of other parts were worth saving.</p>
+  <p>I found a second cruiser with better parts, although its freewheel had a problem. I brought both bikes home, took
+    them apart, and started putting one good bike together. I took the freewheel apart, cleaned it, greased it, and
+    reassembled it. It's a simple but elegant design, and the repair worked perfectly.</p>
+  <p>In a couple of short days the bike was together and I took it for a spin. It has a smooth, relaxed ride that's
+    perfect for a lazy trip into town. I can't wait to ride it more.</p>
+</section>
+
+<section>
+  <h2>Halloween Head</h2>
+  <p>This year's Halloween project is a giant papier-mâché head. I built a huge ball and my daughter helped me draw a
+    creepy "Bob" face on it (her words). He has a devious smile and angry, suspicious eyes. The playful horror of it
+    should be a hit on Halloween.</p>
+</section>
