@@ -13,6 +13,33 @@ html {
       density: 0,
     )
   );
+
+  // Pastel accents layered on top of the Material palette.
+  --pastel-pink: #ffb8d9;
+  --pastel-mint: #a6ecce;
+  --pastel-yellow: #ffe46b;
+  --pastel-brown: #e2c29c;
+  --pastel-blue: #a9d6ff;
+  --rainbow-stripe: linear-gradient(
+    90deg,
+    var(--pastel-pink) 0 20%,
+    var(--pastel-yellow) 20% 40%,
+    var(--pastel-mint) 40% 60%,
+    var(--pastel-blue) 60% 80%,
+    var(--pastel-brown) 80% 100%
+  );
+
+  @include mat.sidenav-overrides(
+    (
+      container-background-color: var(--pastel-mint),
+      content-background-color: #fffdf4,
+    )
+  );
+  @include mat.list-overrides(
+    (
+      active-indicator-color: var(--pastel-pink),
+    )
+  );
 }
 
 html,
@@ -25,4 +52,97 @@ body {
   background: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-large);
+}
+
+h1 {
+  color: var(--mat-sys-primary);
+}
+
+// Highlighter-style underline on section headings, cycling through the pastels.
+h2 {
+  width: fit-content;
+  padding: 0 4px;
+  background: linear-gradient(transparent 55%, var(--highlight, var(--pastel-yellow)) 55%);
+}
+
+section:nth-of-type(5n + 1) h2 {
+  --highlight: var(--pastel-pink);
+}
+section:nth-of-type(5n + 2) h2 {
+  --highlight: var(--pastel-yellow);
+}
+section:nth-of-type(5n + 3) h2 {
+  --highlight: var(--pastel-mint);
+}
+section:nth-of-type(5n + 4) h2 {
+  --highlight: var(--pastel-blue);
+}
+section:nth-of-type(5n + 5) h2 {
+  --highlight: var(--pastel-brown);
+}
+
+a {
+  color: var(--mat-sys-primary);
+}
+
+// Pixel-art sprite pinned to the bottom-right corner of a page (see scripts/pixel-art.py).
+.pixel-sprite {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  width: 96px;
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+
+.pixel-sprite--wide {
+  width: 128px;
+}
+
+.pixel-sprite--float {
+  animation: sprite-float 3s ease-in-out infinite;
+}
+
+.pixel-sprite--bump {
+  animation: sprite-bump 1.2s steps(2) infinite;
+}
+
+@keyframes sprite-float {
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes sprite-bump {
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+// Leave room for the sprite so it doesn't cover the page text.
+@media (min-width: 701px) {
+  :has(> .pixel-sprite) {
+    display: block;
+    padding-right: 64px;
+  }
+}
+
+// On phones there's no spare margin, so the sprite sits at the end of the page instead.
+@media (max-width: 700px) {
+  .pixel-sprite {
+    position: static;
+    display: block;
+    width: 64px;
+    margin: 32px 16px 16px auto;
+  }
+
+  .pixel-sprite--wide {
+    width: 88px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-sprite {
+    animation: none;
+  }
 }
