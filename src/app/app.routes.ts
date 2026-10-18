@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { Employment } from './pubilc/employment/employment';
 import { Experience } from './pubilc/experience/experience';
 import { Experiments } from './pubilc/experiments/experiments';
 import { Interests } from './pubilc/interests/interests';
@@ -7,7 +6,7 @@ import { PageNotFound } from './pubilc/page-not-found/page-not-found';
 import { Summary } from './pubilc/summary/summary';
 
 export const routes: Routes = [
-  { path: 'employment', component: Employment },
+  { path: 'employment', redirectTo: '/experience' },
   { path: 'experience', component: Experience },
   { path: 'experiments', component: Experiments },
   { path: 'interests', component: Interests },
